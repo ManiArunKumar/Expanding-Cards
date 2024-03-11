@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+}
+
+.panel {
+  position: relative;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  height: 90vh;
+  flex: 0.1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 1em;
+  border-radius: 50px;
+  transition: flex 0.7s ease-in;
+}
+
+.panel > h3 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 1;
+}
+
+.panel.active > h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
